@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import AOS from 'aos';
 
 @Component({
   selector: 'app-faq',
@@ -13,13 +12,4 @@ export class Faq {
   toggleFaq(index: number) {
     this.openFaq = this.openFaq === index ? null : index;
   }
-
-  ngAfterViewInit(): void {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: false
-    });
-  }
-
 }
