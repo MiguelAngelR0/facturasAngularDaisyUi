@@ -1,0 +1,15 @@
+<body class="min-h-screen flex flex-col bg-base-100">
+  <header class="sticky top-0 z-50 w-full bg-base-100 shadow-sm">
+    <app-nav class="w-full"></app-nav>
+  </header>
+
+  <main class="flex-grow relative">
+    <div class="relative z-10">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <footer class="mt-20">
+    <app-footer></app-footer>
+  </footer>
+</body>

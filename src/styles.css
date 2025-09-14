@@ -52,6 +52,19 @@
   /* effects */
   --depth: 1;
   --noise: 0;
+  /* Color blue */
+  --color-blue-50: #f0f0ff;
+  --color-blue-100: #e5e4ff;
+  --color-blue-200: #cecdff;
+  --color-blue-300: #aaa6ff;
+  --color-blue-400: #8073ff;
+  --color-blue-500: #593bff;
+  --color-blue-600: #4514ff;
+  --color-blue-700: #3f0fff;
+  /* Primary color */
+  --color-blue-800: #2c01d6;
+  --color-blue-900: #2503af;
+  --color-blue-950: #120077;
 }
 
 @keyframes gentle-move {
