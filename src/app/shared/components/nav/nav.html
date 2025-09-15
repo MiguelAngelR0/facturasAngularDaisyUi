@@ -1,33 +1,40 @@
-<div class="navbar fixed bg-base-100 shadow-sm z-50">
+<div class="navbar bg-base-100 shadow-sm fixed z-50">
+  <!-- Mobile menu button and logo -->
   <div class="navbar-start">
     <div class="dropdown">
-      <!-- Menú hamburguesa móvil -->
-      <div tabindex="0" role="button" class="btn btn-ghost sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost md:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
         </svg>
       </div>
-      <ul tabindex="0" class="dropdown-content z-10 mt-3 w-52 p-2 shadow bg-base-100 rounded-box">
-        <li><a class="hover:text-primary cursor-pointer no-underline">About</a></li>
-        <li><a class="hover:text-primary cursor-pointer no-underline">FAQ</a></li>
-        <li><a class="hover:text-primary cursor-pointer no-underline">Contact</a></li>
-        <li><a class="hover:text-primary cursor-pointer no-underline">Pricing</a></li>
+      <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
+        <li><a href="#about" class="hover:text-primary">About</a></li>
+        <li><a href="#faq" class="hover:text-primary">FAQ</a></li>
+        <!-- <li><a class="hover:text-primary">Contact</a></li> -->
+        <li><a href="#price" class="hover:text-primary">Pricing</a></li>
       </ul>
     </div>
-    <!-- Logo -->
-    <div>
-      <img src="assets/images/logo.png" alt="Logo" class="h-[] w-8 mr-4">
+    <!-- Logo (hidden on desktop) -->
+    <div class="">
+      <img src="assets/images/logo.png" alt="Logo" class="h-8 w-auto">
     </div>
   </div>
 
-  <!-- Enlaces en escritorio a la derecha -->
-  <div class="navbar-end hidden sm:flex">
-    <ul class="menu menu-horizontal px-1">
-      <li><a href="#price" class="hover:text-primary cursor-pointer no-underline">Pricing</a></li>
-      <li><a href="#faq" class="hover:text-primary cursor-pointer no-underline">FAQ</a></li>
-      <li><a href="#about" class="hover:text-primary cursor-pointer no-underline">About</a></li>
-      <!-- <li><a class="hover:text-primary cursor-pointer no-underline">Contact</a></li> -->
-
+  <!-- Centered navigation links (hidden on mobile) -->
+  <div class="navbar-center hidden md:flex">
+    <ul class="menu menu-horizontal px-1 gap-15">
+      <li><a href="#about" class="hover:text-primary">About</a></li>
+      <li><a href="#faq" class="hover:text-primary">FAQ</a></li>
+      <!-- <li><a href="#about" class="hover:text-primary">Contact</a></li> -->
+      <li><a href="#price" class="hover:text-primary">Pricing</a></li>
     </ul>
   </div>
+
+  <!-- Right side (empty for now, can be used for login/cta) -->
+  <div class="navbar-end">
+    <!-- Add any right-aligned content here -->
+  </div>
 </div>
+
+<!-- Add spacing for fixed navbar -->
+<div class="h-16"></div>

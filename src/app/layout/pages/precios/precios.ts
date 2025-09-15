@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HeroPrecios } from "./hero-precios/hero-precios";
 import { AutonomoPrecio } from "./autonomo-precio/autonomo-precio";
@@ -30,7 +31,7 @@ type Tab = {
     }
   `
 })
-export class Precios {
+export class Precios implements OnInit {
   activeTab = signal<string>('autonomo');
 
   tabs: Tab[] = [
@@ -39,7 +40,25 @@ export class Precios {
     { id: 'contabilidad', label: 'Contabilidad' }
   ];
 
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      const tab = params.get('tab');
+      if (tab && this.tabs.some(t => t.id === tab)) {
+        this.activeTab.set(tab);
+      } else if (!tab) {
+
+        this.activeTab.set(this.tabs[0].id);
+      }
+    });
+  }
+
   setActiveTab(tabId: string): void {
     this.activeTab.set(tabId);
+    this.router.navigate(['/precios', tabId]);
   }
 }

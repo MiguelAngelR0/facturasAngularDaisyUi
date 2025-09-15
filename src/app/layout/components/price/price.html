@@ -40,7 +40,7 @@
         </div>
         <h3
           class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-[var(--color-primary)] transition-colors duration-300">
-          Plan Gestorías
+          Plan Autonomos
         </h3>
         <p class="text-gray-600 text-sm">
           Diseñado para gestorías y despachos profesionales
@@ -94,14 +94,14 @@
         </div>
       </div>
 
-      <button
+      <button [routerLink]="['/precios', 'autonomos']"
         class="cursor-pointer w-full bg-[var(--color-secondary)] text-[var(--color-secondary-content)] py-3 rounded-lg hover:bg-[var(--color-primary)] hover:text-[var(--color-primary-content)] transition-all duration-300 font-medium text-sm">
         Ver detalles
       </button>
     </div>
 
 
-    <!-- Plan Autónomos (Más popular) -->
+    <!-- Plan Pyme (Más popular) -->
     <div data-aos="fade-up"
       class="bg-white rounded-2xl border-2 border-[var(--color-primary)] p-6 hover:shadow-xl hover:scale-105 transition-all duration-300 relative min-w-[300px] flex-1 flex flex-col group">
 
@@ -124,7 +124,7 @@
         </div>
         <h3
           class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-[var(--color-primary)] transition-colors duration-300">
-          Plan Autónomos
+          Plan PYME
         </h3>
         <p class="text-gray-600 text-sm">Perfecto para profesionales independientes</p>
       </div>
@@ -176,7 +176,7 @@
         </div>
       </div>
 
-      <button
+      <button [routerLink]="['/precios', 'pymes']"
         class="cursor-pointer w-full bg-[var(--color-secondary)] text-[var(--color-secondary-content)] py-3 rounded-lg hover:bg-[var(--color-primary)] hover:text-[var(--color-primary-content)] transition-all duration-300 font-medium text-sm">
         Ver detalles
       </button>
@@ -199,7 +199,7 @@
         </div>
         <h3
           class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-[var(--color-primary)] transition-colors duration-300">
-          Plan Empresas
+          Plan Contabilidad
         </h3>
         <p class="text-gray-600 text-sm">Solución completa para empresas en crecimiento</p>
       </div>
@@ -251,7 +251,7 @@
         </div>
       </div>
 
-      <button
+      <button [routerLink]="['/precios', 'contabilidad']"
         class="cursor-pointer w-full bg-[var(--color-secondary)] text-[var(--color-secondary-content)] py-3 rounded-lg hover:bg-[var(--color-primary)] hover:text-[var(--color-primary-content)] transition-all duration-300 font-medium text-sm">
         Ver detalles
       </button>

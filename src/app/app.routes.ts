@@ -18,6 +18,11 @@ export const routes: Routes = [
         path: 'precios',
         loadComponent: () =>
           import('./layout/pages/precios/precios').then(m => m.Precios)
+      },
+      {
+        path: 'precios/:tab',
+        loadComponent: () =>
+          import('./layout/pages/precios/precios').then(m => m.Precios)
       }
     ]
   },
