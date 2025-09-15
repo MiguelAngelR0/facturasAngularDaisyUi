@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PreciosService } from '../precios.service';
 
-interface Plan {
-  id: number;
-  nombre: string;
-  precio: number;
-  popular?: boolean;
-  caracteristicas: {
-    [key: string]: string | boolean | number;
-  };
-}
+import { Observable } from 'rxjs';
+import { DestinatarioPlan, Plan } from '../../../../interfaces/precios.interface';
+
 
 @Component({
   selector: 'app-tabla-precios',
@@ -28,13 +23,9 @@ interface Plan {
     
     .plan-card {
       transition: all 0.3s ease;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      background: white;
+      background: var(--color-blue-100);
       border-radius: 0.5rem;
       overflow: visible;
-      position: relative;
       z-index: 1;
     }
     
@@ -44,50 +35,54 @@ interface Plan {
       z-index: 20;
     }
     
-    .features-container {
-      position: relative;
-      z-index: 2;
-    }
   `]
 })
-export class TablaPrecios implements OnInit {
-  columnas: string[] = ['Característica', 'Estándar', 'Premium'];
+export class TablaPrecios {
+  private _destinatario: DestinatarioPlan = 'autonomo';
 
-  planes: Plan[] = [
-    {
-      id: 1,
-      nombre: 'Estándar',
-      precio: 9.99,
-      caracteristicas: {
-        'Almacenamiento': '5 GB',
-        'Usuarios': 1,
-        'Soporte': 'Básico',
-        'Seguridad': 'Básica',
-        'Copias de seguridad': 'Semanal',
-        'Ancho de banda': '10 GB/mes'
-      }
-    },
-    {
-      id: 3,
-      nombre: 'Premium',
-      precio: 49.99,
-      caracteristicas: {
-        'Almacenamiento': '200 GB',
-        'Usuarios': 'Ilimitado',
-        'Soporte': '24/7',
-        'Seguridad': 'Premium',
-        'Copias de seguridad': 'En tiempo real',
-        'Ancho de banda': '1 TB/mes',
-        'Dominio personalizado': true,
-        'SSL gratuito': true
-      }
-    },
-  ];
+  @Input()
+  set destinatario(value: DestinatarioPlan) {
+    if (this._destinatario !== value) {
+      this._destinatario = value;
+      this.actualizarPlanes();
+    }
+  }
+  get destinatario(): DestinatarioPlan {
+    return this._destinatario;
+  }
 
+  planes: Plan[] = [];
   caracteristicas: string[] = [];
+  columnas: string[] = ['Característica'];
+  isLoading = false;
+
+  preciosService = inject(PreciosService);
 
   ngOnInit() {
-    // Obtener todas las características únicas de los planes
+    this.actualizarPlanes();
+  }
+
+  actualizarPlanes(): void {
+    this.isLoading = true;
+    this.preciosService.getPlanesPorDestinatario(this.destinatario).subscribe({
+      next: (planes) => {
+        this.planes = planes;
+        this.actualizarColumnas();
+        this.actualizarCaracteristicas();
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.error('Error al cargar los planes:', error);
+        this.isLoading = false;
+      }
+    });
+  }
+
+  private actualizarColumnas(): void {
+    this.columnas = ['Característica', ...this.planes.map(plan => plan.nombre)];
+  }
+
+  private actualizarCaracteristicas(): void {
     const todasCaracteristicas = new Set<string>();
     this.planes.forEach(plan => {
       Object.keys(plan.caracteristicas).forEach(caracteristica => {
@@ -98,6 +93,10 @@ export class TablaPrecios implements OnInit {
   }
 
   getCaracteristica(plan: Plan, caracteristica: string): string | boolean | number {
-    return plan.caracteristicas[caracteristica] || '-';
+    return plan.caracteristicas[caracteristica] ?? '-';
+  }
+
+  getPrecioFormateado(precio: number): string {
+    return precio.toFixed(2).replace('.', ',');
   }
 }

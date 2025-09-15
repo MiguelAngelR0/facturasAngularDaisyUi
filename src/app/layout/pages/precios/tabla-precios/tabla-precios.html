@@ -1,8 +1,8 @@
 <div class="min-h-screen py-8 px-4">
     <div class="max-w-6xl mx-auto">
         <h1 class="text-3xl font-bold text-center my-10">Planes de Precios</h1>
-
-        <div class=" rounded-xl shadow-sm overflow-hidden">
+        <!-- rounded-xl shadow-sm redondeo de toda la tabla-->
+        <div class=" overflow-hidden">
             <!-- Header con los planes -->
             <div class="sticky-header">
                 <div class="grid grid-cols-12 gap-4 px-6 py-4">
@@ -11,65 +11,79 @@
                             Características
                         </h2>
                     </div>
+                    <!-- Th con las cards -->
                     <div class="col-span-12 md:col-span-9">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div *ngFor="let plan of planes" class="relative">
-                                <div class="plan-card h-full border border-gray-200 rounded-lg">
-                                    <div class="p-6 text-center">
-                                        <h3 class="text-xl font-bold mb-2">{{ plan.nombre }}</h3>
-                                        <p class="text-3xl font-bold text-blue-600 mb-2">
-                                            ${{ plan.precio }}<span class="text-sm text-gray-500">/mes</span>
-                                        </p>
-                                        <button
-                                            class="mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition-colors">
-                                            Comenzar
-                                        </button>
-                                    </div>
+                            @for (plan of planes; track plan.id) {
+
+                            <div
+                                class="plan-card min-h-[230px] border border-gray-200 rounded-lg grid grid-rows-[auto_1fr_auto] gap-3 p-5">
+                                <!-- Title Section -->
+                                <div class="row-start-1">
+                                    <h3 class="text-xl font-bold">{{ plan.nombre }}</h3>
                                 </div>
+
+                                <!-- Price Section (centered in the middle) -->
+                                <div class="row-start-2 flex items-center justify-center">
+                                    <p class="text-3xl font-bold text-blue-600">
+                                        ${{ plan.precio }}<span class="text-sm text-gray-500">/mes</span>
+                                    </p>
+                                </div>
+
+                                <!-- Button Section (always at the bottom) -->
+                                <div class="row-start-3">
+                                    <button
+                                        class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition-colors">
+                                        Comenzar
+                                    </button>
+                                </div>
+
                             </div>
+
+                            }
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Características -->
-            <div class="features-container">
-                <div *ngFor="let caracteristica of caracteristicas" class="border-t border-gray-100">
-                    <div class="grid grid-cols-12 gap-4 px-6 py-4 hover:bg-gray-50 transition-colors">
-                        <!-- Nombre de la característica -->
-                        <div class="col-span-12 md:col-span-3">
-                            <div class="font-medium text-gray-700">{{ caracteristica }}</div>
-                        </div>
 
-                        <!-- Valores para cada plan -->
-                        <div class="col-span-12 md:col-span-9">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div *ngFor="let plan of planes" class="flex items-center justify-center">
-                                    <div class="text-center py-2 px-4">
-                                        <span *ngIf="getCaracteristica(plan, caracteristica) === true"
-                                            class="text-green-500">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline"
-                                                viewBox="0 0 20 20" fill="currentColor">
-                                                <path fill-rule="evenodd"
-                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                    clip-rule="evenodd" />
-                                            </svg>
-                                            <span class="ml-1 text-gray-600">Incluido</span>
-                                        </span>
-                                        <span
-                                            *ngIf="getCaracteristica(plan, caracteristica) !== true && getCaracteristica(plan, caracteristica) !== '-'"
-                                            class="text-gray-600">
-                                            {{ getCaracteristica(plan, caracteristica) }}
-                                        </span>
-                                        <span *ngIf="getCaracteristica(plan, caracteristica) === '-'"
-                                            class="text-gray-400">-</span>
-                                    </div>
-                                </div>
+            @for (caracteristica of caracteristicas; track caracteristica) {
+            <div class="border-t border-gray-100">
+                <div class="grid grid-cols-12 gap-4 px-6 py-4 hover:bg-gray-50 transition-colors">
+                    <!-- Nombre de la característica -->
+                    <div class="col-span-12 md:col-span-3">
+                        <div class="font-medium text-gray-700">{{ caracteristica }}</div>
+                    </div>
+
+                    <!-- Valores para cada plan -->
+                    <div class="col-span-12 md:col-span-9">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            @for (plan of planes; track plan.id) {
+                            <div class="flex items-center justify-center py-2 px-4">
+                                @if (getCaracteristica(plan, caracteristica) === true) {
+                                <span class="text-green-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                                } @else if (getCaracteristica(plan, caracteristica) !== '-') {
+                                <span class="text-gray-600">
+                                    {{ getCaracteristica(plan, caracteristica) }}
+                                </span>
+                                } @else {
+                                <span class="text-gray-400">-</span>
+                                }
                             </div>
+                            }
                         </div>
                     </div>
                 </div>
             </div>
+            }
         </div>
     </div>
 </div>
