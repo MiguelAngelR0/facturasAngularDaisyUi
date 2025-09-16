@@ -24,12 +24,7 @@ type Tab = {
     TablaPrecios
   ],
   templateUrl: './precios.html',
-  styles: `
-    .tab-active {
-      color: var(--color-primary);
-      border-bottom-color: var(--color-primary);
-    }
-  `
+  styleUrls: ['./precios.component.scss']
 })
 export class Precios implements OnInit {
   activeTab = signal<string>('autonomo');

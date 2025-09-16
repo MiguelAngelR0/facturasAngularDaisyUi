@@ -94,7 +94,7 @@
         </div>
       </div>
 
-      <button [routerLink]="['/precios', 'autonomos']"
+      <button (click)="navigateToPrecios('autonomos')"
         class="cursor-pointer w-full bg-[var(--color-secondary)] text-[var(--color-secondary-content)] py-3 rounded-lg hover:bg-[var(--color-primary)] hover:text-[var(--color-primary-content)] transition-all duration-300 font-medium text-sm">
         Ver detalles
       </button>
@@ -176,7 +176,7 @@
         </div>
       </div>
 
-      <button [routerLink]="['/precios', 'pymes']"
+      <button (click)="navigateToPrecios('pymes')"
         class="cursor-pointer w-full bg-[var(--color-secondary)] text-[var(--color-secondary-content)] py-3 rounded-lg hover:bg-[var(--color-primary)] hover:text-[var(--color-primary-content)] transition-all duration-300 font-medium text-sm">
         Ver detalles
       </button>
@@ -251,7 +251,7 @@
         </div>
       </div>
 
-      <button [routerLink]="['/precios', 'contabilidad']"
+      <button (click)="navigateToPrecios('contabilidad')"
         class="cursor-pointer w-full bg-[var(--color-secondary)] text-[var(--color-secondary-content)] py-3 rounded-lg hover:bg-[var(--color-primary)] hover:text-[var(--color-primary-content)] transition-all duration-300 font-medium text-sm">
         Ver detalles
       </button>

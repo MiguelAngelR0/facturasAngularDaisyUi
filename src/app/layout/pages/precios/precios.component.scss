@@ -1,0 +1,37 @@
+/* Base tab button styles */
+.tab-button {
+    position: relative;
+    overflow: visible;
+    min-width: 8rem;
+    outline: none !important;
+    transition: border-color 0.2s ease;
+
+    &:focus-visible {
+        border-bottom: 2px solid var(--color-accent);
+    }
+
+    /* Ensure minimum width for all buttons */
+}
+
+/* Inverted corner SVG */
+.topRightInverted {
+    position: absolute;
+    top: 0;
+    left: -15%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.topLeftInverted {
+    position: absolute;
+    top: 0;
+    right: -15%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Active tab styles */
+.active {
+    position: relative;
+    z-index: 1;
+}
