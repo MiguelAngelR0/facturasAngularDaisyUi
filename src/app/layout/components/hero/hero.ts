@@ -8,16 +8,7 @@ import { InvoicePreview } from "./invoice-preview/invoice-preview";
   imports: [TranslateModule, SignUpForm, InvoicePreview],
   templateUrl: './hero.html',
   styles: `
-    #bloqueEntrada {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 6%;
-    gap: 4rem;
-    padding-top: var(--altura-cabecera);
-    margin-bottom: calc(11rem - var(--altura-cabecera));
-    min-height: 100svh;
-}
+
 
   `
 })

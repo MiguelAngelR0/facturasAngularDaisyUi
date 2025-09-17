@@ -1,6 +1,6 @@
 {
-  "header": {
-    "home": "Inicio",
+  "hero": {
+    "title": "Facturas",
     "skills": "Habilidades",
     "experience": "Experiencia",
     "projects": "Proyectos",

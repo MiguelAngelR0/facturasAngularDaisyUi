@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 @import "aos/dist/aos.css";
+
+/* Establecer la fuente para toda la aplicación */
+html,
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
 
 /* @plugin "daisyui" {
   themes: light --default, forest --prefersdark, corporate;
@@ -8,6 +15,13 @@
 @plugin "daisyui";
 
 @plugin "daisyui/theme" {
+  /* Color turquesa  */
+  --color-turquesa-claro: #00CB87;
+
+  /* Color amarillo */
+  --color-amarillo-claro: #F4FF0F;
+
+
   name: "mytheme";
   default: true;
   /* set as default */
@@ -20,14 +34,19 @@
   --color-base-200: oklch(95% 0.03 240);
   --color-base-300: oklch(92% 0.04 240);
   --color-base-content: oklch(20% 0.05 240);
+
   --color-primary: #3f0fff;
   --color-primary-content: #ffffff;
-  --color-secondary: #d5cefd;
+
+  --color-secondary: var(--color-turquesa-claro);
   --color-secondary-content: #4a4080;
-  --color-accent: #d8e6ff;
-  --color-accent-content: #2a2a4a;
+
+  --color-accent: #F4FF0F;
+  --color-accent-content: var(--color-amarillo-claro);
+
   --color-neutral: oklch(50% 0.05 240);
   --color-neutral-content: oklch(98% 0.01 240);
+
   --color-info: oklch(70% 0.2 220);
   --color-info-content: oklch(98% 0.01 220);
   --color-success: oklch(65% 0.25 140);
@@ -65,6 +84,9 @@
   --color-blue-800: #2c01d6;
   --color-blue-900: #2503af;
   --color-blue-950: #120077;
+
+
+
 }
 
 @keyframes gentle-move {
