@@ -15,6 +15,9 @@ body {
 @plugin "daisyui";
 
 @plugin "daisyui/theme" {
+  /* Negro content */
+  --color-negro-content: #101921;
+
   /* Color turquesa  */
   --color-turquesa-claro: #00CB87;
 
@@ -39,7 +42,7 @@ body {
   --color-primary-content: #ffffff;
 
   --color-secondary: var(--color-turquesa-claro);
-  --color-secondary-content: #4a4080;
+  --color-secondary-content: var(--color-negro-content);
 
   --color-accent: #F4FF0F;
   --color-accent-content: var(--color-amarillo-claro);

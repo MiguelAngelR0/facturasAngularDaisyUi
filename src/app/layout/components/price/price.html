@@ -26,6 +26,85 @@
 
     <!-- plan Gestorias -->
     <div data-aos="fade-up"
+      class="cardPrecio bg-white rounded-2xl p-6 hover:shadow-lg hover:scale-105 hover:border-[var(#101921)] transition-all duration-300 min-w-[300px] flex-1 flex flex-col group">
+
+      <div class="">
+        <div
+          class=" text-center mb-6 w-12 h-12 bg-[var(--color-secondary)] rounded-2xl flex items-center justify-center mx-auto mb-3  group-hover:scale-110 transition-all duration-300">
+          <svg
+            class="w-6 h-6 text-[var(--color-negro-content)] group-hover:text-[var(--color-primary-content)] transition-colors duration-300"
+            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2  transition-colors duration-300">
+          Plan Autonomos
+        </h3>
+        <p class="text-gray-600 text-sm">
+          Diseñado para gestorías y despachos profesionales
+        </p>
+      </div>
+
+      <div class="space-y-3 mb-6 flex-grow">
+        <div class="flex items-center space-x-3">
+          <div
+            class="w-4 h-4 bg-[var(--color-accent)] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--color-primary)] transition-colors duration-300">
+            <svg
+              class="w-2.5 h-2.5 text-[var(--color-accent-content)] group-hover:text-[var(--color-secondary-content)] transition-colors duration-300"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="text-gray-700 text-sm">Múltiples usuarios y clientes</span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <div
+            class="w-4 h-4 bg-[var(--color-accent)] rounded-full flex items-center justify-center flex-shrink-0  transition-colors duration-300">
+            <svg class="w-2.5 h-2.5 text-[var(--color-accent-content)]  transition-colors duration-300" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="text-gray-700 text-sm">Cumple con Verifactu</span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <div
+            class="w-4 h-4 bg-[var(--color-accent)] rounded-full flex items-center justify-center flex-shrink-0  transition-colors duration-300">
+            <svg class="w-2.5 h-2.5 text-[var(--color-accent-content)]  transition-colors duration-300" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="text-gray-700 text-sm">Panel de administración avanzado</span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <div
+            class="w-4 h-4 bg-[var(--color-accent)] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--color-primary)] transition-colors duration-300">
+            <svg
+              class="w-2.5 h-2.5 text-[var(--color-accent-content)] group-hover:text-[var(--color-primary-content)] transition-colors duration-300"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <span class="text-gray-700 text-sm">Soporte prioritario</span>
+        </div>
+      </div>
+
+      <button (click)="navigateToPrecios('autonomos')"
+        class="cursor-pointer w-full bg-[var(--color-secondary)] text-[var(--color-secondary-content)] py-3 rounded-lg hover:bg-[var(--color-primary)] hover:text-[var(--color-primary-content)] transition-all duration-300 font-medium text-sm">
+        Ver detalles
+      </button>
+    </div>
+
+
+
+
+
+
+
+
+    <div data-aos="fade-up"
       class="bg-white rounded-2xl border border-[var(--color-secondary)] p-6 hover:shadow-lg hover:scale-105 hover:border-[var(--color-primary)] transition-all duration-300 min-w-[300px] flex-1 flex flex-col group">
 
       <div class="text-center mb-6">
@@ -40,11 +119,9 @@
         </div>
         <h3
           class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-[var(--color-primary)] transition-colors duration-300">
-          Plan Autonomos
+          Plan Contabilidad
         </h3>
-        <p class="text-gray-600 text-sm">
-          Diseñado para gestorías y despachos profesionales
-        </p>
+        <p class="text-gray-600 text-sm">Solución completa para empresas en crecimiento</p>
       </div>
 
       <div class="space-y-3 mb-6 flex-grow">
@@ -57,7 +134,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <span class="text-gray-700 text-sm">Múltiples usuarios y clientes</span>
+          <span class="text-gray-700 text-sm">Usuarios ilimitados</span>
         </div>
         <div class="flex items-center space-x-3">
           <div
@@ -79,7 +156,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <span class="text-gray-700 text-sm">Panel de administración avanzado</span>
+          <span class="text-gray-700 text-sm">Integraciones avanzadas</span>
         </div>
         <div class="flex items-center space-x-3">
           <div
@@ -90,11 +167,11 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <span class="text-gray-700 text-sm">Soporte prioritario</span>
+          <span class="text-gray-700 text-sm">Soporte dedicado</span>
         </div>
       </div>
 
-      <button (click)="navigateToPrecios('autonomos')"
+      <button (click)="navigateToPrecios('contabilidad')"
         class="cursor-pointer w-full bg-[var(--color-secondary)] text-[var(--color-secondary-content)] py-3 rounded-lg hover:bg-[var(--color-primary)] hover:text-[var(--color-primary-content)] transition-all duration-300 font-medium text-sm">
         Ver detalles
       </button>
@@ -183,79 +260,6 @@
     </div>
 
 
-    <!-- Plan Empresas -->
-    <div data-aos="fade-up"
-      class="bg-white rounded-2xl border border-[var(--color-secondary)] p-6 hover:shadow-lg hover:scale-105 hover:border-[var(--color-primary)] transition-all duration-300 min-w-[300px] flex-1 flex flex-col group">
-
-      <div class="text-center mb-6">
-        <div
-          class="w-12 h-12 bg-[var(--color-secondary)] rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-[var(--color-primary)] group-hover:scale-110 transition-all duration-300">
-          <svg
-            class="w-6 h-6 text-[var(--color-primary)] group-hover:text-[var(--color-primary-content)] transition-colors duration-300"
-            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-          </svg>
-        </div>
-        <h3
-          class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-[var(--color-primary)] transition-colors duration-300">
-          Plan Contabilidad
-        </h3>
-        <p class="text-gray-600 text-sm">Solución completa para empresas en crecimiento</p>
-      </div>
-
-      <div class="space-y-3 mb-6 flex-grow">
-        <div class="flex items-center space-x-3">
-          <div
-            class="w-4 h-4 bg-[var(--color-accent)] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--color-primary)] transition-colors duration-300">
-            <svg
-              class="w-2.5 h-2.5 text-[var(--color-accent-content)] group-hover:text-[var(--color-primary-content)] transition-colors duration-300"
-              fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <span class="text-gray-700 text-sm">Usuarios ilimitados</span>
-        </div>
-        <div class="flex items-center space-x-3">
-          <div
-            class="w-4 h-4 bg-[var(--color-accent)] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--color-primary)] transition-colors duration-300">
-            <svg
-              class="w-2.5 h-2.5 text-[var(--color-accent-content)] group-hover:text-[var(--color-primary-content)] transition-colors duration-300"
-              fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <span class="text-gray-700 text-sm">Cumple con Verifactu</span>
-        </div>
-        <div class="flex items-center space-x-3">
-          <div
-            class="w-4 h-4 bg-[var(--color-accent)] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--color-primary)] transition-colors duration-300">
-            <svg
-              class="w-2.5 h-2.5 text-[var(--color-accent-content)] group-hover:text-[var(--color-primary-content)] transition-colors duration-300"
-              fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <span class="text-gray-700 text-sm">Integraciones avanzadas</span>
-        </div>
-        <div class="flex items-center space-x-3">
-          <div
-            class="w-4 h-4 bg-[var(--color-accent)] rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[var(--color-primary)] transition-colors duration-300">
-            <svg
-              class="w-2.5 h-2.5 text-[var(--color-accent-content)] group-hover:text-[var(--color-primary-content)] transition-colors duration-300"
-              fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <span class="text-gray-700 text-sm">Soporte dedicado</span>
-        </div>
-      </div>
-
-      <button (click)="navigateToPrecios('contabilidad')"
-        class="cursor-pointer w-full bg-[var(--color-secondary)] text-[var(--color-secondary-content)] py-3 rounded-lg hover:bg-[var(--color-primary)] hover:text-[var(--color-primary-content)] transition-all duration-300 font-medium text-sm">
-        Ver detalles
-      </button>
-    </div>
 
   </div>
 
@@ -265,7 +269,7 @@
       ¿No estás seguro de cuál elegir? Todos nuestros planes incluyen
       prueba gratuita.
     </p>
-    <button
+    <button (click)="navigateToPrecios('autonomos')"
       class=" cursor-pointer bg-gray-900 text-white px-8 py-3 rounded-lg hover:bg-gray-800 hover:scale-105 transition-all duration-200 font-medium">
       Comparar todos los planes
     </button>

@@ -6,13 +6,21 @@ import { isPlatformBrowser } from '@angular/common';
   selector: 'app-price',
   imports: [RouterModule, RouterLink],
   templateUrl: './price.html',
-  styles: ``
+  styles: `
+  .cardPrecio{
+    
+    -webkit-box-shadow: 0 0 15px 0 rgba(16, 25, 33, 0.1);
+    box-shadow: 0 0 15px 0 rgba(16, 25, 33, 0.1);
+}
+  
+  
+  `
 })
 export class Price {
   constructor(
     private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  ) { }
 
   scrollToTop(): void {
     if (isPlatformBrowser(this.platformId)) {
