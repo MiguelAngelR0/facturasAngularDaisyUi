@@ -2,27 +2,8 @@
 <!-- <div class="card2"></div>
  -->
 
-
-<section id="about" class="min-h-screen bg-gradient-to-br from-base-100 to-base-200 py-20">
-
-
-  <div class="container mx-auto px-4">
-
-    <!-- Header Section -->
-    <div class="text-center mb-16" data-aos="fade-up">
-      <h2 class="text-4xl md:text-5xl font-bold text-base-content mb-6">
-        Sobre Nosotros
-      </h2>
-      <p class="text-xl text-base-content/70 max-w-3xl mx-auto leading-relaxed">
-        Transformamos la gestión de facturas con tecnología moderna y diseño intuitivo
-      </p>
-    </div>
-
-    <!-- Main Content Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-
-      <!-- Left Column - Story -->
-      <div data-aos="fade-right">
+<!-- Left Column - Story  card modificada -->
+<!-- <div data-aos="fade-right">
         <div class="inverted p-7">
 
           <h3 class="text-3xl font-bold mb-4">Nuestra Historia</h3>
@@ -41,167 +22,46 @@
         </button>
 
 
-      </div>
+      </div> -->
 
-      <!-- Right Column - Mission -->
-      <div data-aos="fade-left" class="relative w-full max-w-lg">
-        <svg xmlns="http://www.w3.org/2000/svg" style="display: block;position: absolute" width="0" height="0">
-          <defs>
-            <clipPath id="clip" clipPathUnits="objectBoundingBox">
-              <path
-                d="M0.032,0H0.968A0.032,0.0533,0,0,1,1,0.0533V0.9467A0.032,0.0533,0,0,1,0.968,1H0.452A0.02,0.0333,0,0,1,0.432,0.9667V0.91A0.062,0.1033,0,0,0,0.37,0.8067H0.032A0.032,0.0533,0,0,1,0,0.7533V0.0533A0.032,0.0533,0,0,1,0.032,0Z" />
-            </clipPath>
-          </defs>
-        </svg>
-        <div class="inverted2 "></div>
-        <button
-          class="absolute bottom-3 left-3 btn btn-sm sm:btn-md btn-active btn-primary px-4 sm:px-6 rounded-[20px]">
-          Primary
-        </button>
+<section id="about" class="py-16 bg-[var(--color-base-100)]">
+  <div class="max-w-7xl mx-auto px-4 space-y-16">
+    <!-- Bloque 1: card izquierda, texto derecha (en móvil card arriba) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <!-- Card -->
+      <div class="rounded-2xl bg-[var(--color-primary)]/10 h-56 sm:h-72 md:h-80 lg:h-96 shadow-lg"></div>
+      <!-- Texto -->
+      <div class="text-base-content">
+        <h3 class="text-2xl md:text-3xl font-bold mb-3">Más velocidad y mejor precio</h3>
+        <p class="text-base md:text-lg text-base-content/70">Texto descriptivo breve para este bloque. Sustituye por tu
+          contenido real.</p>
+        <button class="btn btn-outline btn-primary mt-4 w-fit">Más información</button>
       </div>
     </div>
 
-    <!-- Features Grid -->
-    <div class="mb-20" data-aos="fade-up">
-      <h3 class="text-3xl font-bold text-center text-base-content mb-12">¿Por qué elegirnos?</h3>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- Feature 1 -->
-        <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="zoom-in"
-          data-aos-delay="100">
-          <div class="card-body text-center p-6">
-            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
-                </path>
-              </svg>
-            </div>
-            <h4 class="card-title text-lg justify-center mb-2">Velocidad</h4>
-            <p class="text-base-content/70">
-              Crea facturas profesionales en segundos con nuestros templates inteligentes
-            </p>
-          </div>
-        </div>
-
-        <!-- Feature 2 -->
-        <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="zoom-in"
-          data-aos-delay="200">
-          <div class="card-body text-center p-6">
-            <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            </div>
-            <h4 class="card-title text-lg justify-center mb-2">Precisión</h4>
-            <p class="text-base-content/70">
-              Cálculos automáticos y validaciones que eliminan errores humanos
-            </p>
-          </div>
-        </div>
-
-        <!-- Feature 3 -->
-        <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="zoom-in"
-          data-aos-delay="300">
-          <div class="card-body text-center p-6">
-            <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
-                </path>
-              </svg>
-            </div>
-            <h4 class="card-title text-lg justify-center mb-2">Seguridad</h4>
-            <p class="text-base-content/70">
-              Protección de datos empresariales con encriptación de nivel bancario
-            </p>
-          </div>
-        </div>
+    <!-- Bloque 2: alterna (texto izquierda en md+, card derecha; en móvil card arriba) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <!-- Card primero en móvil, segundo en md+ -->
+      <div class="rounded-2xl bg-[var(--color-accent)]/10 h-56 sm:h-72 md:h-80 lg:h-96 shadow-lg order-1 md:order-2">
+      </div>
+      <!-- Texto segundo en móvil, primero en md+ -->
+      <div class="text-base-content order-2 md:order-1">
+        <h3 class="text-2xl md:text-3xl font-bold mb-3">Promoción especial</h3>
+        <p class="text-base md:text-lg text-base-content/70">Otro texto descriptivo que explica alguna funcionalidad o
+          beneficio.</p>
+        <button class="btn btn-outline btn-primary mt-4 w-fit">Participar</button>
       </div>
     </div>
 
-    <!-- Technology Stack -->
-    <div class="mb-20" data-aos="fade-up">
-      <h3 class="text-3xl font-bold text-center text-base-content mb-12">Tecnología de Vanguardia</h3>
-
-      <div class="card bg-base-100 shadow-xl">
-        <div class="card-body p-8">
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-
-            <!-- Angular -->
-            <div class="flex flex-col items-center" data-aos="flip-up" data-aos-delay="100">
-              <div class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mb-3">
-                <svg class="w-10 h-10 text-red-600" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z" />
-                </svg>
-              </div>
-              <h4 class="font-semibold text-base-content">Angular</h4>
-              <p class="text-sm text-base-content/60">Framework robusto</p>
-            </div>
-
-            <!-- Tailwind CSS -->
-            <div class="flex flex-col items-center" data-aos="flip-up" data-aos-delay="200">
-              <div class="w-16 h-16 bg-cyan-100 rounded-lg flex items-center justify-center mb-3">
-                <svg class="w-10 h-10 text-cyan-600" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zM6.001 12c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
-                </svg>
-              </div>
-              <h4 class="font-semibold text-base-content">Tailwind CSS</h4>
-              <p class="text-sm text-base-content/60">Diseño moderno</p>
-            </div>
-
-            <!-- DaisyUI -->
-            <div class="flex flex-col items-center" data-aos="flip-up" data-aos-delay="300">
-              <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
-                <svg class="w-10 h-10 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                </svg>
-              </div>
-              <h4 class="font-semibold text-base-content">DaisyUI</h4>
-              <p class="text-sm text-base-content/60">Componentes elegantes</p>
-            </div>
-
-            <!-- TypeScript -->
-            <div class="flex flex-col items-center" data-aos="flip-up" data-aos-delay="400">
-              <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
-                <svg class="w-10 h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z" />
-                </svg>
-              </div>
-              <h4 class="font-semibold text-base-content">TypeScript</h4>
-              <p class="text-sm text-base-content/60">Código confiable</p>
-            </div>
-          </div>
-        </div>
+    <!-- Bloque 3: card izquierda nuevamente -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="rounded-2xl bg-[var(--color-secondary)]/10 h-56 sm:h-72 md:h-80 lg:h-96 shadow-lg"></div>
+      <div class="text-base-content">
+        <h3 class="text-2xl md:text-3xl font-bold mb-3">Tecnología de vanguardia</h3>
+        <p class="text-base md:text-lg text-base-content/70">Más contenido de ejemplo. Cambia este texto por el tuyo.
+        </p>
+        <button class="btn btn-outline btn-primary mt-4 w-fit">Saber más</button>
       </div>
     </div>
-
-    <!-- Call to Action -->
-    <div class="text-center" data-aos="fade-up">
-      <div class="card bg-gradient-to-r from-primary to-secondary text-primary-content shadow-2xl">
-        <div class="card-body p-12">
-          <h3 class="text-3xl font-bold mb-4">¿Listo para revolucionar tu facturación?</h3>
-          <p class="text-xl mb-8 opacity-90">
-            Únete a miles de empresas que ya confían en nuestra plataforma
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button class="btn btn-lg bg-white text-primary hover:bg-gray-100 border-0">
-              Comenzar Gratis
-            </button>
-            <button class="btn btn-lg btn-outline border-white text-white hover:bg-white hover:text-primary">
-              Ver Demo
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <div>
-
   </div>
 </section>

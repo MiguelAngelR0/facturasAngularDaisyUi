@@ -1,9 +1,11 @@
 import { Component, inject, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PreciosService } from '../precios.service';
+
 
 import { Observable } from 'rxjs';
-import { DestinatarioPlan, Plan } from '../../../../interfaces/precios.interface';
+
+import { PreciosTablaService } from '../../../../shared/services/preciosTabla.service';
+import { DestinatarioPlan, PlanTabla } from '../../../../interfaces/preciosTabla.interface';
 
 
 @Component({
@@ -20,7 +22,7 @@ import { DestinatarioPlan, Plan } from '../../../../interfaces/precios.interface
       margin-bottom: 1rem;
       border-bottom: 1px solid #e5e7eb;
     }
-    
+
     .plan-card {
       transition: all 0.3s ease;
       background: var(--color-blue-100);
@@ -28,13 +30,13 @@ import { DestinatarioPlan, Plan } from '../../../../interfaces/precios.interface
       overflow: visible;
       z-index: 1;
     }
-    
+
     .plan-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
       z-index: 20;
     }
-    
+
   `]
 })
 export class TablaPrecios {
@@ -51,12 +53,12 @@ export class TablaPrecios {
     return this._destinatario;
   }
 
-  planes: Plan[] = [];
+  planes: PlanTabla[] = [];
   caracteristicas: string[] = [];
   columnas: string[] = ['Característica'];
   isLoading = false;
 
-  preciosService = inject(PreciosService);
+  preciosTablaService = inject(PreciosTablaService);
 
   ngOnInit() {
     this.actualizarPlanes();
@@ -64,7 +66,7 @@ export class TablaPrecios {
 
   actualizarPlanes(): void {
     this.isLoading = true;
-    this.preciosService.getPlanesPorDestinatario(this.destinatario).subscribe({
+    this.preciosTablaService.getPlanesPorDestinatario(this.destinatario).subscribe({
       next: (planes) => {
         this.planes = planes;
         this.actualizarColumnas();
@@ -92,7 +94,7 @@ export class TablaPrecios {
     this.caracteristicas = Array.from(todasCaracteristicas);
   }
 
-  getCaracteristica(plan: Plan, caracteristica: string): string | boolean | number {
+  getCaracteristica(plan: PlanTabla, caracteristica: string): string | boolean | number {
     return plan.caracteristicas[caracteristica] ?? '-';
   }
 

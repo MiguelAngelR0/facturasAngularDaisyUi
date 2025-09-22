@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { Landing } from './layout/pages/landing/landing';
-import { Precios } from './layout/pages/precios/precios';
+import { PreciosPage } from './layout/pages/precios/precios';
 import { Layout } from './layout/pages/layout/layout';
 
 
@@ -17,12 +17,12 @@ export const routes: Routes = [
       {
         path: 'precios',
         loadComponent: () =>
-          import('./layout/pages/precios/precios').then(m => m.Precios)
+          import('./layout/pages/precios/precios').then(m => m.PreciosPage)
       },
       {
         path: 'precios/:tab',
         loadComponent: () =>
-          import('./layout/pages/precios/precios').then(m => m.Precios)
+          import('./layout/pages/precios/precios').then(m => m.PreciosPage)
       }
     ]
   },

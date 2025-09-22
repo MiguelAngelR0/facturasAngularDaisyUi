@@ -1,9 +1,11 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { AosService } from '../../../shared/services/aos.service';
+import { Component } from '@angular/core';
+
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  standalone: true,
+  imports: [NgClass],
   templateUrl: './about.html',
   styles: `
   .card2 {
@@ -39,19 +41,8 @@ import { AosService } from '../../../shared/services/aos.service';
 `
 
 })
-export class About implements OnInit, AfterViewInit {
+export class About {
 
-  constructor(private aosService: AosService) { }
 
-  ngOnInit(): void {
-    // Initialize AOS using the centralized service
-    this.aosService.initializeAOS();
-  }
-
-  ngAfterViewInit(): void {
-    // Refresh AOS to detect new elements after view initialization
-    setTimeout(() => {
-      this.aosService.refreshAOS();
-    }, 100);
-  }
+  constructor() { }
 }

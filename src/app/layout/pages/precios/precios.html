@@ -1,6 +1,6 @@
 <div class="relative">
   <!-- Hero Section -->
-  <div class="bg-[var(--color-secondary)] pt-20">
+  <div class="bg-[#F1F0F3] pt-12">
     <app-hero-precios></app-hero-precios>
   </div>
 
@@ -10,15 +10,15 @@
     <div class="relative">
       @if (activeTab() === tab.id) {
       <svg class="topRightInverted" width="20" height="20" viewBox="0 0 25 25">
-        <path d="M25,25 L25,0 L0,0 A25,25 0 0,1 25,25 Z" fill="var(--color-secondary)" />
+        <path d="M25,25 L25,0 L0,0 A25,25 0 0,1 25,25 Z" fill="#F1F0F3" />
       </svg>
       <svg class="topLeftInverted" width="20" height="20">
-        <path d="M0,25 L0,0 L25,0 A25,25 0 0,0 0,25 Z" fill="var(--color-secondary)" />
+        <path d="M0,25 L0,0 L25,0 A25,25 0 0,0 0,25 Z" fill="#F1F0F3" />
       </svg>
 
       }
       <button (click)="setActiveTab(tab.id)"
-        [class]="activeTab() === tab.id ? 'tab-button active bg-[var(--color-secondary)] text-white rounded-b-lg' : 'tab-button text-[var(--color-neutral)] hover:bg-[var(--color-base-200)] rounded-b-lg'"
+        [class]="activeTab() === tab.id ? 'tab-button active bg-[#F1F0F3] rounded-b-lg' : 'tab-button text-[var(--color-neutral)] hover:bg-[var(--color-base-200)] rounded-b-lg'"
         class="w-32 text-center px-4 py-3 text-sm font-medium transition-all duration-200 relative cursor-pointer">
         {{ tab.label }}
       </button>
@@ -38,16 +38,16 @@
       <app-tabla-precios [destinatario]="'autonomo'" class="mt-8"></app-tabla-precios>
     </div>
     }
-    @case ('pymes') {
+    @case ('pyme') {
     <div class="p-6">
       <app-pyme-precio></app-pyme-precio>
       <app-tabla-precios [destinatario]="'pyme'" class="mt-8"></app-tabla-precios>
     </div>
     }
-    @case ('contabilidad') {
+    @case ('gestoria') {
     <div class="p-6">
       <app-contabilidad-precio></app-contabilidad-precio>
-      <app-tabla-precios [destinatario]="'contabilidad'" class="mt-8"></app-tabla-precios>
+      <app-tabla-precios [destinatario]="'gestoria'" class="mt-8"></app-tabla-precios>
     </div>
     }
     }

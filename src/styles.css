@@ -20,9 +20,10 @@ body {
 
   /* Color turquesa  */
   --color-turquesa-claro: #00CB87;
-
+  --color-turquesa-oscuro: #00B787;
   /* Color amarillo */
-  --color-amarillo-claro: #F4FF0F;
+  --color-amarillo: #f0c205;
+
 
 
   name: "mytheme";
@@ -33,7 +34,7 @@ body {
   color-scheme: light;
   /* color of browser-provided UI */
 
-  --color-base-100: #f5f5ff;
+  --color-base-100: #ffffff;
   --color-base-200: oklch(95% 0.03 240);
   --color-base-300: oklch(92% 0.04 240);
   --color-base-content: oklch(20% 0.05 240);

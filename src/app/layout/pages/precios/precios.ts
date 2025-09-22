@@ -13,7 +13,7 @@ type Tab = {
 };
 
 @Component({
-  selector: 'app-precios',
+  selector: 'app-precios-page',
   standalone: true,
   imports: [
     CommonModule,
@@ -26,13 +26,13 @@ type Tab = {
   templateUrl: './precios.html',
   styleUrls: ['./precios.component.scss']
 })
-export class Precios implements OnInit {
+export class PreciosPage implements OnInit {
   activeTab = signal<string>('autonomo');
 
   tabs: Tab[] = [
     { id: 'autonomo', label: 'Autónomos' },
-    { id: 'pymes', label: 'PYMES' },
-    { id: 'contabilidad', label: 'Contabilidad' }
+    { id: 'pyme', label: 'PYMES' },
+    { id: 'gestoria', label: 'Gestoría' }
   ];
 
   constructor(

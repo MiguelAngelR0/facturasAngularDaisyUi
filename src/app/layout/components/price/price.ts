@@ -1,6 +1,8 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
+import { PreciosCardService } from '../../../shared/services/precios-card.service';
+import { PlanPrecioCard } from '../../../interfaces/preciosCard.interface';
 
 @Component({
   selector: 'app-price',
@@ -16,11 +18,18 @@ import { isPlatformBrowser } from '@angular/common';
   
   `
 })
-export class Price {
+export class Price implements OnInit {
+  planes: PlanPrecioCard[] = [];
+
   constructor(
     private router: Router,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private preciosCardService: PreciosCardService
   ) { }
+
+  ngOnInit(): void {
+    this.planes = this.preciosCardService.getPlanesPrecio();
+  }
 
   scrollToTop(): void {
     if (isPlatformBrowser(this.platformId)) {
