@@ -1,11 +1,4 @@
-<div class="relative overflow-hidden my-20">
-  <!-- Decorative background elements -->
-  <div
-    class="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-blue-100 to-transparent rounded-full -translate-x-32 -translate-y-32 opacity-50">
-  </div>
-  <div
-    class="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-blue-50 to-transparent rounded-full translate-x-48 translate-y-48 opacity-30">
-  </div>
+<div class="relative overflow-hidden pb-7 my-20">
 
   <div class="text-center mb-16">
     <h2 class="text-4xl lg:text-5xl font-light text-gray-900 mb-6 leading-tight">
@@ -16,7 +9,7 @@
     </p>
   </div>
 
-  <div class="flex flex-wrap justify-center items-end gap-8 px-4 py-12 max-w-7xl mx-auto">
+  <div class="flex flex-wrap justify-center items-end gap-8 px-4 max-w-7xl mx-auto">
     @for (plan of planes; track plan.id) {
     @if (plan.popular) {
     <!-- Popular Card with Yellow Border -->
@@ -47,7 +40,7 @@
           </p>
         </div>
 
-        <div class="divider text-gray-800"></div>
+        <div class="divider text-neutral-900"></div>
 
         <div class="space-y-3 mb-6 flex-grow">
           @for (caracteristica of plan.caracteristicas; track $index) {
@@ -68,13 +61,18 @@
         </div>
 
         <button (click)="navigateToPrecios(plan.id)" class="cursor-pointer w-full py-3 rounded-full
-                     bg-[var(--color-turquesa-oscuro)]
-                     text-[var(--color-negro-content)]
-                     font-medium
-                     shadow-[0_4px_10px_rgba(0,0,0,0.3)]
-                     hover:bg-[#00FFA6]
-                     hover:shadow-[0_6px_14px_rgba(0,0,0,0.35)]
-                     transition-all duration-300 mt-auto">
+        bg-[var(--color-turquesa-oscuro)]
+        text-[var(--color-negro-content)]
+        font-medium
+        shadow-[0_4px_10px_rgba(0,0,0,0.3)]
+        hover:bg-[#00FFA6]
+        active:bg-[#00FFA6]
+        focus:bg-[#00FFA6]
+        focus:outline-none
+        hover:shadow-[0_6px_14px_rgba(0,0,0,0.35)]
+        active:shadow-[0_6px_14px_rgba(0,0,0,0.35)]
+        focus:shadow-[0_6px_14px_rgba(0,0,0,0.35)]
+        transition-all duration-300 mt-auto">
           Ver detalles
         </button>
       </div>
@@ -123,13 +121,18 @@
       </div>
 
       <button (click)="navigateToPrecios(plan.id)" class="cursor-pointer w-full py-3 rounded-full
-                   bg-[var(--color-turquesa-oscuro)]
-                   text-[var(--color-negro-content)]
-                   font-medium
-                   shadow-[0_4px_10px_rgba(0,0,0,0.3)]
-                   hover:bg-[#00FFA6]
-                   hover:shadow-[0_6px_14px_rgba(0,0,0,0.35)]
-                   transition-all duration-300 mt-auto">
+      bg-[var(--color-turquesa-oscuro)]
+      text-[var(--color-negro-content)]
+      font-medium
+      shadow-[0_4px_10px_rgba(0,0,0,0.3)]
+      hover:bg-[#00FFA6]
+      active:bg-[#00FFA6]
+      focus:bg-[#00FFA6]
+      focus:outline-none
+      hover:shadow-[0_6px_14px_rgba(0,0,0,0.35)]
+      active:shadow-[0_6px_14px_rgba(0,0,0,0.35)]
+      focus:shadow-[0_6px_14px_rgba(0,0,0,0.35)]
+      transition-all duration-300 mt-auto">
         Ver detalles
       </button>
     </div>
@@ -139,7 +142,7 @@
 </div>
 
 <!-- Bottom CTA -->
-<div class="text-center mt-16 mb-5">
+<div class="text-center mb-5">
   <p class="text-gray-600 mb-6">
     ¿No estás seguro de cuál elegir? Todos nuestros planes incluyen prueba gratuita.
   </p>
