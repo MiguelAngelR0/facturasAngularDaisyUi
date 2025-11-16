@@ -20,7 +20,6 @@ import { DestinatarioPlan, PlanTabla } from '../../../../interfaces/preciosTabla
       z-index: 10;
       padding-bottom: 1rem;
       margin-bottom: 1rem;
-      border-bottom: 1px solid #e5e7eb;
     }
 
     .plan-card {
@@ -57,6 +56,7 @@ export class TablaPrecios {
   caracteristicas: string[] = [];
   columnas: string[] = ['Característica'];
   isLoading = false;
+  activeTabIndex = 0;
 
   preciosTablaService = inject(PreciosTablaService);
 
@@ -100,5 +100,9 @@ export class TablaPrecios {
 
   getPrecioFormateado(precio: number): string {
     return precio.toFixed(2).replace('.', ',');
+  }
+
+  seleccionarTab(index: number): void {
+    this.activeTabIndex = index;
   }
 }

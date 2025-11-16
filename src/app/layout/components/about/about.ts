@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
-
-import { NgClass } from '@angular/common';
-
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [NgClass],
+  imports: [],
   templateUrl: './about.html',
   styles: `
   .card2 {

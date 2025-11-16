@@ -1,89 +1,154 @@
 <div class="min-h-screen py-8 px-4">
-    <div class="max-w-6xl mx-auto">
-        <h1 class="text-3xl font-bold text-center my-10">Planes de Precios</h1>
-        <!-- rounded-xl shadow-sm redondeo de toda la tabla-->
-        <div class=" overflow-hidden">
-            <!-- Header con los planes -->
-            <div class="sticky-header">
-                <div class="grid grid-cols-12 gap-4 px-6 py-4">
-                    <div class="col-span-12 md:col-span-3">
-                        <h2 class="text-lg font-semibold text-gray-700 bottom-0 left-0 absolute ml-5 mb-5">
-                            Características
-                        </h2>
-                    </div>
-                    <!-- Th con las cards -->
-                    <div class="col-span-12 md:col-span-9">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            @for (plan of planes; track plan.id) {
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-3xl font-bold text-center my-10">Planes de Precios</h1>
+    <!-- rounded-xl shadow-sm redondeo de toda la tabla-->
+    <div class=" overflow-hidden">
+      <!-- Header con los planes -->
+      <!-- Header con los planes -->
+      <div class="grid grid-cols-12 gap-4 px-6 py-4 sticky-header">
+        <div class="col-span-12 md:col-span-3">
+          <h2 class="text-lg font-semibold text-gray-700 bottom-0 left-0 absolute ml-3 mb-3">
+            Características
+          </h2>
+        </div>
 
-                            <div
-                                class="plan-card min-h-[230px] border border-gray-200 rounded-lg grid grid-rows-[auto_1fr_auto] gap-3 p-5">
-                                <!-- Title Section -->
-                                <div class="row-start-1">
-                                    <h3 class="text-xl font-bold">{{ plan.nombre }}</h3>
-                                </div>
-
-                                <!-- Price Section (centered in the middle) -->
-                                <div class="row-start-2 flex items-center justify-center">
-                                    <p class="text-3xl font-bold text-blue-600">
-                                        ${{ plan.precio }}<span class="text-sm text-gray-500">/mes</span>
-                                    </p>
-                                </div>
-
-                                <!-- Button Section (always at the bottom) -->
-                                <div class="row-start-3">
-                                    <button
-                                        class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition-colors">
-                                        Comenzar
-                                    </button>
-                                </div>
-
-                            </div>
-
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Características -->
-
-            @for (caracteristica of caracteristicas; track caracteristica) {
-            <div class="border-t border-gray-100">
-                <div class="grid grid-cols-12 gap-4 px-6 py-4 hover:bg-gray-50 transition-colors">
-                    <!-- Nombre de la característica -->
-                    <div class="col-span-12 md:col-span-3">
-                        <div class="font-medium text-gray-700">{{ caracteristica }}</div>
-                    </div>
-
-                    <!-- Valores para cada plan -->
-                    <div class="col-span-12 md:col-span-9">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            @for (plan of planes; track plan.id) {
-                            <div class="flex items-center justify-center py-2 px-4">
-                                @if (getCaracteristica(plan, caracteristica) === true) {
-                                <span class="text-green-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20"
-                                        fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                </span>
-                                } @else if (getCaracteristica(plan, caracteristica) !== '-') {
-                                <span class="text-gray-600">
-                                    {{ getCaracteristica(plan, caracteristica) }}
-                                </span>
-                                } @else {
-                                <span class="text-gray-400">-</span>
-                                }
-                            </div>
-                            }
-                        </div>
-                    </div>
-                </div>
+        <!-- Desktop: dos columnas -->
+        <div class="hidden md:block col-span-12 md:col-span-9">
+          <div class="grid grid-cols-2 gap-4">
+            @for (plan of planes; track plan.id) {
+            <div
+              class="plan-card min-h-[230px] border border-gray-200 rounded-lg grid grid-rows-[auto_1fr_auto] gap-3 p-5">
+              <div class="row-start-1">
+                <h3 class="text-xl font-bold">{{ plan.nombre }}</h3>
+              </div>
+              <div class="row-start-2 flex items-center justify-center">
+                <p class="text-3xl font-bold text-blue-600">
+                  ${{ plan.precio }}<span class="text-sm text-gray-500">/mes</span>
+                </p>
+              </div>
+              <div class="row-start-3">
+                <button
+                  class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition-colors">
+                  Comenzar
+                </button>
+              </div>
             </div>
             }
+          </div>
         </div>
+
+        <!-- Mobile: tabs -->
+        <div class="block md:hidden col-span-12">
+          <div role="tablist" class="tabs tabs-bordered mb-4">
+            @for (plan of planes; track plan.id; let i = $index) {
+            <a role="tab" class="tab" [class.tab-active]="activeTabIndex === i" (click)="seleccionarTab(i)">
+              {{ plan.nombre }}
+            </a>
+            }
+          </div>
+
+          @if (planes.length > 0) {
+          <div
+            class="plan-card min-h-[230px] border border-gray-200 rounded-lg grid grid-rows-[auto_1fr_auto] gap-3 p-5 mb-12">
+            <div class="row-start-1">
+              <h3 class="text-xl font-bold">{{ planes[activeTabIndex].nombre }}</h3>
+            </div>
+            <div class="row-start-2 flex items-center justify-center">
+              <p class="text-3xl font-bold text-blue-600">
+                ${{ planes[activeTabIndex].precio }}<span class="text-sm text-gray-500">/mes</span>
+              </p>
+            </div>
+            <div class="row-start-3">
+              <button
+                class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition-colors">
+                Comenzar
+              </button>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+
+      <!-- Características -->
+      <div class="border-t border-gray-100">
+
+        <!-- Desktop -->
+        <div class="hidden md:block">
+          @for (caracteristica of caracteristicas; track caracteristica) {
+          <div class="border-t border-gray-100">
+            <div class="grid grid-cols-12 gap-4 px-6 pt-4 hover:bg-gray-50 transition-colors">
+              <!-- Nombre de la característica -->
+              <div class="col-span-12 md:col-span-3">
+                <div class="font-medium text-gray-700">{{ caracteristica }}</div>
+              </div>
+
+              <!-- Valores para cada plan -->
+              <div class="col-span-12 md:col-span-9">
+                <div class="grid grid-cols-2 gap-4">
+                  @for (plan of planes; track plan.id) {
+                  <div class="flex items-center justify-center py-2 px-4">
+                    @if (getCaracteristica(plan, caracteristica) === true) {
+                    <span class="text-green-500">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd" />
+                      </svg>
+                    </span>
+                    } @else if (getCaracteristica(plan, caracteristica) !== '-') {
+                    <span class="text-gray-600">
+                      {{ getCaracteristica(plan, caracteristica) }}
+                    </span>
+                    } @else {
+                    <span class="text-gray-400">-</span>
+                    }
+                  </div>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+
+        <!-- Mobile -->
+        <div class="block md:hidden">
+          @if (planes.length > 0) {
+          @for (caracteristica of caracteristicas; track caracteristica) {
+          <div class="border-t border-gray-100">
+            <div class="grid grid-cols-2 gap-4 px-6 py-4 hover:bg-gray-50 transition-colors">
+              <!-- Izquierda: nombre -->
+              <div class="font-medium text-gray-700">
+                {{ caracteristica }}
+              </div>
+
+              <!-- Derecha: valor del plan activo -->
+              <div class="text-right">
+                @if (getCaracteristica(planes[activeTabIndex], caracteristica) === true) {
+                <span class="text-green-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </span>
+                } @else if (getCaracteristica(planes[activeTabIndex], caracteristica) !== '-') {
+                <span class="text-gray-600">
+                  {{ getCaracteristica(planes[activeTabIndex], caracteristica) }}
+                </span>
+                } @else {
+                <span class="text-gray-400">-</span>
+                }
+              </div>
+            </div>
+          </div>
+          }
+          }
+        </div>
+      </div>
+
     </div>
+  </div>
 </div>

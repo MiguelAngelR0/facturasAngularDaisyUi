@@ -1,21 +1,21 @@
 import { Component, Inject, PLATFORM_ID, OnInit } from '@angular/core';
-import { Router, RouterLink, RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { PreciosCardService } from '../../../shared/services/precios-card.service';
 import { PlanPrecioCard } from '../../../interfaces/preciosCard.interface';
 
 @Component({
   selector: 'app-price',
-  imports: [RouterModule, RouterLink],
+  imports: [RouterModule],
   templateUrl: './price.html',
   styles: `
   .cardPrecio{
-    
+
     -webkit-box-shadow: 0 0 15px 0 rgba(16, 25, 33, 0.1);
     box-shadow: 0 0 15px 0 rgba(16, 25, 33, 0.1);
 }
-  
-  
+
+
   `
 })
 export class Price implements OnInit {
