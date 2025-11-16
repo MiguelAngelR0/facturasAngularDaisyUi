@@ -1,13 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600&display=swap');
 @import "tailwindcss";
 @import "aos/dist/aos.css";
 
 /* Establecer la fuente para toda la aplicación */
 html,
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
+
+.hero-banner {
+  font-family: 'Belanosima', 'Montserrat', sans-serif;
+}
+
 
 /* @plugin "daisyui" {
   themes: light --default, forest --prefersdark, corporate;

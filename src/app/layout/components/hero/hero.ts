@@ -6,7 +6,7 @@ import { AosService } from '../../../shared/services/aos.service';
 
 @Component({
   selector: 'app-hero',
-  imports: [TranslateModule, SignUpForm, InvoicePreview],
+  imports: [TranslateModule],
   templateUrl: './hero.html',
   styles: `
 

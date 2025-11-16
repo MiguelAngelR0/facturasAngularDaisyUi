@@ -1,0 +1,48 @@
+<section class="w-full flex justify-center">
+  <div class="w-[80dvw] max-w-full overflow-hidden">
+    <table
+      class="w-full table-fixed border-collapse
+             text-xs sm:text-sm md:text-base text-slate-700"
+    >
+      <tbody>
+        <tr
+          *ngFor="let row of visibleRows"
+          class="border-t border-primary/40 first:border-t-0"
+        >
+          <!-- Columna izquierda -->
+          <td
+            class="align-top break-words
+                   px-4 py-4 sm:px-2 md:px-4
+                   font-semibold text-primary
+                   border-r border-primary/40
+                   md:w-2/5"
+          >
+            {{ row.title }}
+          </td>
+
+          <!-- Columna derecha -->
+          <td
+            class="align-top break-words
+                   px-4 py-4 sm:px-4 md:px-6
+                   text-slate-600
+                   md:w-3/5"
+          >
+            {{ row.description }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      *ngIf="infoRows.length > 3"
+      class="mt-4 flex justify-center"
+    >
+      <button
+        type="button"
+        class="rounded-full border border-primary px-6 py-2 text-sm font-semibold text-primary transition hover:bg-primary hover:text-white"
+        (click)="toggleRows()"
+      >
+        {{ showAll ? 'Mostrar menos' : 'Mostrar más' }}
+      </button>
+    </div>
+  </div>
+</section>
